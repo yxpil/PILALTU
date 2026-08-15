@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PILALTU · 多端口服务聚合路由器</title>
+<link rel="stylesheet" href="/pilaltu/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">PILALTU</span>
+      <span class="brand-sub">多端口服务聚合路由器</span>
+    </div>
+    <div class="topbar-right">
+      <span id="meLabel" class="chip hidden"></span>
+      <button id="logoutBtn" class="btn btn-ghost hidden">退出</button>
+    </div>
+  </header>
+
+  <!-- ======== 登录视图 ======== -->
+  <section id="view-login" class="view hidden">
+    <div class="card login-card">
+      <div class="card-badge">SIGN IN</div>
+      <h1 class="card-title">登录</h1>
+      <p class="card-sub">输入凭据以进入服务选择</p>
+      <form id="loginForm" autocomplete="off">
+        <input id="loginUser" class="field" placeholder="用户名" autocomplete="username">
+        <input id="loginPass" class="field" type="password" placeholder="密码" autocomplete="current-password">
+        <div id="loginErr" class="err hidden"></div>
+        <button type="submit" id="loginBtn" class="btn btn-dark btn-block">登录</button>
+      </form>
+      <p class="card-foot">默认管理员 admin / admin123</p>
+    </div>
+  </section>
+
+  <!-- ======== 选择视图 ======== -->
+  <section id="view-select" class="view hidden">
+
+    <div class="statusbar">
+      <div class="chip" id="routeChip">未设置路由</div>
+      <div class="chip chip-ghost" id="defaultChip">未设置默认伪装</div>
+      <div class="chip chip-ghost" id="scanChip">未扫描</div>
+      <span class="flex-spacer"></span>
+      <span class="hint">Alt+U 在任意页面快速切换</span>
+    </div>
+
+    <div class="section-head">
+      <h2>服务列表</h2>
+      <button id="rescanBtn" class="btn btn-ghost hidden">重新扫描</button>
+    </div>
+
+    <div class="servgrid" id="serviceGrid"></div>
+
+    <div id="scanBar" class="scanbar hidden">
+      <span class="spinner"></span>
+      <span id="scanText">正在扫描全部端口…</span>
+    </div>
+
+    <div id="emptyState" class="empty hidden">
+      <p>尚未发现任何服务</p>
+      <button id="scanBtn2" class="btn btn-dark hidden">开始扫描</button>
+    </div>
+
+    <!-- ======== 管理员区 ======== -->
+    <div id="adminZone" class="admin hidden">
+
+      <div class="section-head">
+        <h2>管理</h2>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title-sm">默认伪装</h3>
+        <p class="card-sub-sm">未设置路由 Cookie 的请求将转发到该端口，如同直接访问此服务</p>
+        <div class="row">
+          <select id="defaultPortSel" class="field select"></select>
+          <button id="defaultSetBtn" class="btn btn-dark">设为默认</button>
+          <button id="defaultClearBtn" class="btn btn-ghost">清除</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title-sm">用户管理</h3>
+        <div class="row">
+          <input id="newUserName" class="field" placeholder="用户名">
+          <input id="newUserPass" class="field" type="password" placeholder="密码">
+          <select id="newUserRole" class="field select">
+            <option value="user">普通用户</option>
+            <option value="admin">管理员</option>
+          </select>
+          <button id="addUserBtn" class="btn btn-dark">添加</button>
+        </div>
+        <div id="userList" class="userlist"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<script src="/pilaltu/app.js"></script>
+</body>
+</html>

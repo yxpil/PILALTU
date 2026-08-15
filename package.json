@@ -1,0 +1,18 @@
+{
+  "name": "pilaltu",
+  "version": "0.1.0",
+  "description": "多端口服务聚合路由器：自动识别全部端口服务，Cookie 标记路由，Alt+U 快捷切换，支持默认伪装",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node test/e2e.js",
+    "test:browser": "node test/browser.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer-core": "^25.7.0"
+  }
+}

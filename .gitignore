@@ -1,0 +1,11 @@
+# 依赖
+node_modules/
+
+# 运行时数据（含用户密码哈希，勿提交）
+data/
+
+# 测试产物
+test/screenshots/
+
+# 日志
+*.log

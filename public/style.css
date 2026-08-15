@@ -1,0 +1,296 @@
+/* PILALTU — 简约黑白圆角胶囊风格 */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --line: #e6e6e6;
+  --line-strong: #d4d4d4;
+  --ink: #111111;
+  --ink-soft: #555555;
+  --ink-faint: #999999;
+  --radius-card: 22px;
+  --radius-pill: 999px;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden { display: none !important; }
+.flex-spacer { flex: 1; }
+
+.shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+/* ---------- 顶栏 ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px 24px;
+}
+.brand { display: flex; align-items: baseline; gap: 12px; }
+.brand-mark {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 7px 18px;
+}
+.brand-sub { color: var(--ink-faint); font-size: 13px; letter-spacing: .06em; }
+.topbar-right { display: flex; align-items: center; gap: 10px; }
+
+/* ---------- 胶囊 / 按钮 ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 7px 16px;
+  font-size: 12.5px;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.chip-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+}
+.chip .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex: none;
+}
+.chip .dot.off { background: #c4c4c4; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 9px 22px;
+  font-size: 13.5px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ink);
+  transition: background .15s, border-color .15s, color .15s;
+  font-family: inherit;
+}
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: #333; }
+.btn-ghost { border-color: var(--line-strong); color: var(--ink-soft); }
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.btn-block { width: 100%; }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn-sm { padding: 5px 14px; font-size: 12px; }
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 36px;
+}
+.card-badge {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: .22em;
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.card-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.card-sub { color: var(--ink-faint); font-size: 13.5px; margin-bottom: 28px; }
+.card-title-sm { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.card-sub-sm { color: var(--ink-faint); font-size: 12.5px; margin-bottom: 16px; }
+.card-foot { margin-top: 20px; color: var(--ink-faint); font-size: 12px; text-align: center; }
+
+.login-card { max-width: 400px; margin: 40px auto 0; }
+
+/* ---------- 表单 ---------- */
+.field {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  padding: 11px 20px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  background: #fff;
+  outline: none;
+  transition: border-color .15s;
+}
+.field:focus { border-color: var(--ink); }
+.field.select { width: auto; min-width: 140px; cursor: pointer; }
+form .field { margin-bottom: 14px; }
+.err {
+  color: #c0392b;
+  font-size: 12.5px;
+  margin-bottom: 12px;
+  padding-left: 6px;
+}
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+.row .field { flex: 1; min-width: 120px; }
+
+/* ---------- 状态条 ---------- */
+.statusbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.hint { color: var(--ink-faint); font-size: 12px; }
+
+/* ---------- 区块标题 ---------- */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.section-head h2 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* ---------- 服务胶囊网格 ---------- */
+.servgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.svc {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  text-align: left;
+  font-family: inherit;
+}
+.svc:hover { border-color: var(--ink); }
+.svc.active { border-color: var(--ink); background: var(--ink); color: #fff; }
+.svc .port {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+.svc.active .port { background: #fff; color: var(--ink); }
+.svc .info { min-width: 0; flex: 1; }
+.svc .name {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.svc.active .name { color: #fff; }
+.svc .meta {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+.svc.active .meta { color: rgba(255,255,255,.65); }
+.svc .offline-mark {
+  flex: none;
+  font-size: 10.5px;
+  color: #a0a0a0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+}
+.svc.active .offline-mark { border-color: rgba(255,255,255,.5); color: rgba(255,255,255,.7); }
+
+/* ---------- 扫描进度 ---------- */
+.scanbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid var(--line-strong);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  flex: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- 空状态 ---------- */
+.empty {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--ink-faint);
+}
+.empty p { margin-bottom: 18px; }
+
+/* ---------- 管理员区 ---------- */
+.admin { margin-top: 44px; }
+.admin .card { margin-bottom: 16px; }
+
+.userlist { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.userrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: #fff;
+}
+.userrow .uname { font-weight: 600; min-width: 120px; }
+.userrow .urole {
+  font-size: 11px;
+  border-radius: var(--radius-pill);
+  padding: 3px 12px;
+  background: #f0f0f0;
+  color: var(--ink-soft);
+}
+.userrow .urole.admin { background: var(--ink); color: #fff; }
+.userrow .flex-spacer { flex: 1; }
+.userrow .row-actions { display: flex; gap: 6px; }
