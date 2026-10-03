@@ -1,5 +1,13 @@
 # PILALTU 测试说明
 
+- 测试完成：是（2026-10-04）
+- 测试日期：2026-10-04
+- 测试内容：单元：store/auth 配置与鉴权；集成：真实上游 HTTP 代理(302/503)+登录路由；注入：esc() XSS 转义、路径穿越；钩子：Alt+U/Esc 前端切换器交互
+- 运行命令：cd server && npm test
+- 测试框架：Node 内置 node:test + jsdom
+- 模型：豆包（Doubao）生成
+
+
 ## 运行方式
 
 ```bash
