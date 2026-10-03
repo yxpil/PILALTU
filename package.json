@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "test": "node test/e2e.js",
+    "test": "node --test --test-concurrency=1 \"tests/**/*.test.js\"",
+    "test:e2e": "node test/e2e.js",
     "test:browser": "node test/browser.js"
   },
   "engines": {
