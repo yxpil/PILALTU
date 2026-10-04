@@ -77,3 +77,15 @@ node test/browser.js   # 浏览器全流程实测（13 项，截图在 test/scre
 - 仅监听本机回环地址，适合个人本地多服务聚合
 - 会话 Cookie HttpOnly + SameSite=Lax；密码 scrypt 加盐哈希
 - 首次使用请修改默认管理员密码
+
+---
+
+<div align="center">
+
+<a href="https://github.com/yxpil/PILALTU">
+  <img width="100%" src="https://alittlecatgirlpanel.yxp.hk/card?repo=yxpil/PILALTU" alt="gh-card · yxpil/PILALTU" />
+</a>
+
+<sub>Powered by <a href="https://alittlecatgirlpanel.yxp.hk"><b>gh-card</b></a> · 粉色手写体 README 仓库名片</sub>
+
+</div>
